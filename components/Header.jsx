@@ -3,7 +3,9 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import UserMenu from './UserMenu'
-const Header = () => {
+import { checkUser } from '@/lib/checkUser'
+const Header = async () => {
+    await checkUser()
     return (
         <header>
             <div className="mt-5 px-[3rem]">
